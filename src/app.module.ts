@@ -1,8 +1,8 @@
 import { Module } from '@nestjs/common';
 import { TypeOrmModule } from '@nestjs/typeorm';
-import { PatientModule } from './patient/patient.module';
-import { DiagnosisModule } from './diagnosis/diagnosis.module';
-import { LesionModule } from './lesion/lesion.module';
+import { PatientModule } from './modules/patient.module';
+import { DiagnosisModule } from './modules/diagnosis.module';
+import { LesionModule } from './modules/lesion.module';
 
 @Module({
   imports: [
@@ -10,9 +10,9 @@ import { LesionModule } from './lesion/lesion.module';
       type: 'postgres',
       host: 'localhost',
       port: 5432,
-      username: 'your_username',
-      password: 'your_password',
-      database: 'your_database',
+      username: 'postgres',
+      password: '',
+      database: 'postgres',
       entities: [__dirname + '/**/*.entity{.ts,.js}'],
       synchronize: true,
     }),
